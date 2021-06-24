@@ -17,6 +17,8 @@ if ($b_tag =="F") {
 // $b_cont=htmlentities($b_cont);
 // $b_cont=strip_tags($b_cont, '');
 
+
+
 // $str2 = $b_cont;
 // $num =0;
 // while ($num == 0) {
