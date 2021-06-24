@@ -13,21 +13,24 @@ if ($b_tag =="F") {
   // code...
   $b_cont = htmlspecialchars($b_cont);
 }
+// $b_cont = htmlspecialchars($b_cont);
+// $b_cont=htmlentities($b_cont);
+// $b_cont=strip_tags($b_cont, '');
 
-$str2 = $b_cont;
-$num =0;
-while ($num == 0) {
-  // code...
-  $b_cont =preg_replace("/<script*>/i","",$b_cont);
-  if ($b_cont != $str2) {
-    // code...
-    $str2 = $b_cont;
-
-  }else {
-
-    $num = 1;
-  }
-}
+// $str2 = $b_cont;
+// $num =0;
+// while ($num == 0) {
+//   // code...
+//   $b_cont =preg_replace("/<script*>/i","",$b_cont);
+//   if ($b_cont != $str2) {
+//     // code...
+//     $str2 = $b_cont;
+//
+//   }else {
+//
+//     $num = 1;
+//   }
+// }
 
 //데이터 처리 (파일)
 $f_error=$_FILES["att_file"]["error"];
