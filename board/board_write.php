@@ -27,6 +27,16 @@
                wform.cont.focus();
                return false;
              }
+
+             var str = document.wform.cont.value;
+
+             if (str.match('<script>') =='<script>') {
+               alert ("잘못된 입력");
+               wform.cont.focus();
+               return false;
+             }
+
+
             document.wform.submit();
           }
 

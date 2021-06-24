@@ -9,7 +9,7 @@
 			<iframe src="head.php" id="bodyFrame" name="body" width="100%" frameborder="0"></iframe>
 		<div id="main_contents" class="contents">
 			<h1><?php
-					session_start();
+					session_start(); //쿠키 값 발급
 					if($_SESSION[nickname]){
 							echo $_SESSION[nickname]."님";
 					}
