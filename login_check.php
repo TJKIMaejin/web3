@@ -33,6 +33,11 @@
       $_SESSION[nickname]=$rs_arr[nickname];
       $_SESSION[ip_addr]=$_SERVER[REMOTE_ADDR];
 
+      //쿠키 값  설정 및 변경
+      setcookie("login_access", "hahahahah", time()+3600, "/", "", false, true);
+      // setcookie("login_access", "hahahahah", time()+3600); 보통 이렇게 생략하면서 사용 가능
+
+
       echo "<script>
         alert('로그인 되었습니다.');
         location.replace('index.php');
