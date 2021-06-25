@@ -29,6 +29,7 @@ if (!$nick) {
   }
 
   require("dbconn.php");
+  //
 
   $strSQL="update member set nickname='$nick' where u_id='$_SESSION[user_id]'";
   $rs=mysql_query($strSQL, $conn);
