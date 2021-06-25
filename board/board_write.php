@@ -28,13 +28,13 @@
                return false;
              }
 
-             var str = document.wform.cont.value;
-
-             if (str.match('<script>') =='<script>') {
-               alert ("잘못된 입력");
-               wform.cont.focus();
-               return false;
-             }
+             // var str = document.wform.cont.value;
+             //
+             // if (str.match('<script>') =='<script>') {
+             //   alert ("잘못된 입력");
+             //   wform.cont.focus();
+             //   return false;
+             // }
 
 
             document.wform.submit();
@@ -70,7 +70,7 @@
                </tr>
                <tr>
                   <th width="100"><font>이  름</font></th>
-                  <td><input type="text" name="name" size="11" value=<?=$rs_arr[u_name]?>></td>
+                  <td><input type="text" name="name" size="11" value='$_Session["user_id"]'></td>
                </tr>
                <tr>
                   <th><font>비밀번호</font></th>

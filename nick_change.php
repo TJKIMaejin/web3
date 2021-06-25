@@ -2,6 +2,16 @@
   session_start();
   $nick=$_GET["nick"];
 
+if($_SERVER[HTTP_REFERER] !="http://192.168.50.50/nickname.php"){
+//CSRF 방어 방버
+  echo "<script>
+    alert('요청의 경로가 올바르지 않습니다');
+    history.back();
+  </script>";
+  exit();
+}
+
+
 if (!$nick) {
   // code...
   echo "<script>
