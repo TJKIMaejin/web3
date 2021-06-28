@@ -27,25 +27,22 @@
     $strSQL="select * from member where u_id='".$id."' and u_pass='".$pw."';";
     $rs=mysql_query($strSQL,$conn);
     $rs_arr=mysql_fetch_array($rs);
+    if (($rs_arr[u_id] == $id) && ($rs_arr[u_pass] ==$pw)) {
+      $_SESSION[user_id] = $rs_arr[u_id];
+      $_SESSION[nickname] = $rs_arr[nickname];
+      $_SESSION[ip_addr] = $rs_arr[REMOTE_ADDR];
 
-    if($rs_arr){
-      $_SESSION[user_id]=$rs_arr[u_id];
-      $_SESSION[nickname]=$rs_arr[nickname];
-      $_SESSION[ip_addr]=$_SERVER[REMOTE_ADDR];
-
-      //쿠키 값  설정 및 변경
-      setcookie("login_access", "hahahahah", time()+3600, "/", "", false, true);
-      // setcookie("login_access", "hahahahah", time()+3600); 보통 이렇게 생략하면서 사용 가능
-
-
+      setcookie("login_access", "hahahah" ,time()+3600, "/",false ,true);
       echo "<script>
-        alert('로그인 되었습니다.');
-        location.replace('index.php');
+      alert('로그인 되었습니다');
+      location.replace('index.php');
       </script>";
+      // code...
     }else {
       echo "<script>
-        alert('아이디 또는 패스워드가 일치하지 않습니다.');
-        history.back();
+      alert('로그인 실패했습니다');
+      history.back();
       </script>";
     }
+
 ?>

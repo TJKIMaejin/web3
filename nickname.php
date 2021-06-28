@@ -11,22 +11,22 @@
     <div id="nick_contents" class="contents">
       <?php
       session_start();
+      include_once("random.php");
+      $_SESSION[token]=GE_ST(20);
         if($_COOKIE['login_access'] != "hahahahah"){
           echo "<script>
             alert('잘못된 접속 입니다');
             location.replace('index.php');
           </script>";
-
-        }
-        if (!$_SESSION[user_id]) {
-          // code...
+          exit();
         }
        ?>
       <form action="nick_change.php">
         <table cellpadding="10" style="border:0px">
           <tr>
             <th>닉네임: </th>
-            <td><input type="text" name="nick"></td>
+            <td><input type="text" name="nick" value=<?=$_SESSION[nickname]?>></td>
+            <input type="hidden" name="token">
             <td><input type="submit" value="변경" class="btn_default btn_gray"></td>
           </tr>
         </table>
