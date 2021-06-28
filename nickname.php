@@ -11,8 +11,8 @@
     <div id="nick_contents" class="contents">
       <?php
       session_start();
-      include_once("random.php");
-      $_SESSION[token]=GE_ST(20);
+      // include_once("random.php");
+      // $_SESSION[token]=GE_ST(20);
         if($_COOKIE['login_access'] != "hahahahah"){
           echo "<script>
             alert('잘못된 접속 입니다');

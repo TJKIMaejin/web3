@@ -6,13 +6,13 @@ $age = $_POST['age'];
 $nick =$_POST['nick'];
 $email=$_POST['email'];
 
-if ($_SESSION[ip_addr] != $_SERVER[REMOTE_ADDR]) {
-  session_destroy();
-  echo "<script>
-    location.replace('index.php');
-  </script>";
-  exit();
-}
+// if ($_SESSION[ip_addr] != $_SERVER[REMOTE_ADDR]) {
+//   session_destroy();
+//   echo "<script>
+//     location.replace('index.php');
+//   </script>";
+//   exit();
+// }
 
 if (!$nick) {
   // code...
