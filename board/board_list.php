@@ -33,8 +33,8 @@
           $strSQL="";
           if($_GET[keyword])
           {
-            $keyword = $_GET["keyword"];
-            $keyword = addslashes($keyword);
+            $keyword = trim($_GET["keyword"]);
+            $keyword = mysql_real_escape_string($keyword);
             $key = $_GET["key"];
 
             switch ($key) {

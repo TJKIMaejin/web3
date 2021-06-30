@@ -20,12 +20,23 @@
       <div id="board_contents" class="contents">
         <?php
         session_start();
-        $conn=mysql_connect("localhost", "root", "P@ssw0rd");
-        mysql_set_charset("utf8",$conn);
-        $connDB=mysql_select_db("WebTest", $conn);
 
-        $a_num=$_GET["num"];
-        $a_num=addslashes($a_num);
+        require("../dbconn.php");
+
+        $a_num=trim($_GET["num"]);
+
+        if (eregi("|/|\(|\)|\t|\|&|union|select|from|0x", $a_num)) {
+          exit("no hack !!");
+        }
+        if (preg_match("/select|insert|delete|update|drop/i",$a_num)) {
+          // code...
+          exit("no hack !!");
+        }
+        if (preg_match("/union|from|limit|information_schema/i",$a_num)) {
+          // code...
+          exit("no hack !!");
+        }  // 문자열 필터링 함수 특정 문자열 검색 함수 사용하여 치환
+
         $strSQL="update board set viewCount=viewCOunt+1 where strNumber=".$a_num.";";
         mysql_query($strSQL,$conn);
 

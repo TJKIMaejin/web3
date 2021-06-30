@@ -2,8 +2,8 @@
 
     session_start();
 
-    $id=$_POST["user_id"];
-    $pw=$_POST["user_pw"];
+    $id=trim($_POST["user_id"]);
+    $pw=trim($_POST["user_pw"]);
 
     if($id=="" && $pw=="") {
       echo "<script>
@@ -23,7 +23,7 @@
     }
 
     $id = addslashes($id);
-
+  
     require("dbconn.php");
 
     $strSQL="select * from member where u_id='".$id."' and u_pass='".$pw."';";
