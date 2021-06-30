@@ -17,7 +17,7 @@
 			</tr>
 			<tr>
 				<th>ID</th>
-				<td class="input"><input type="text" name="user_id" style="border: 0;" maxlength="12"></td>
+				<td class="input"><input type="text" name="user_id" style="border: 0;" maxlength="999"></td>
 			</tr>
 			<tr>
 				<th>PASSWORD</th>

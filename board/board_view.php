@@ -25,6 +25,7 @@
         $connDB=mysql_select_db("WebTest", $conn);
 
         $a_num=$_GET["num"];
+        $a_num=addslashes($a_num);
         $strSQL="update board set viewCount=viewCOunt+1 where strNumber=".$a_num.";";
         mysql_query($strSQL,$conn);
 
@@ -72,11 +73,11 @@
          <tr>
             <th width="15%"><font><b>첨부 파일</b></font></th>
             <td colspan="3">
-              <?php
-              if ($b_fname != "") {?>
-               <a href="board_file_download.php?filename=<?=$b_fname;?>"><?=$b_fname;?>(<?=$b_fsize;?>byte)</a><font>
-               <?php } ?>
-               </font></td>
+              <?php if ($b_fname != "") { ?>
+                <a href="board_file_download.php?filename=<?=$b_fname;?>"><?=$b_fname;?>&nbsp;&nbsp;(<?=$b_fsize;?>byte)</a>
+              <?php } ?>
+
+          </font></td>
          </tr>
       </table>
       <br/>

@@ -34,6 +34,7 @@
           if($_GET[keyword])
           {
             $keyword = $_GET["keyword"];
+            $keyword = addslashes($keyword);
             $key = $_GET["key"];
 
             switch ($key) {

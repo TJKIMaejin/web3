@@ -22,12 +22,16 @@
       }
     }
 
+    $id = addslashes($id);
+
     require("dbconn.php");
 
     $strSQL="select * from member where u_id='".$id."' and u_pass='".$pw."';";
     $rs=mysql_query($strSQL,$conn);
     $rs_arr=mysql_fetch_array($rs);
-    if (($rs_arr[u_id] == $id) && ($rs_arr[u_pass] ==$pw)) {
+  # if (($rs_arr[u_id] == $id) && ($rs_arr[u_pass] ==$pw)) {
+    if ($rs_arr) {
+      // code...
       $_SESSION[user_id] = $rs_arr[u_id];
       $_SESSION[nickname] = $rs_arr[nickname];
       $_SESSION[ip_addr] = $rs_arr[REMOTE_ADDR];
