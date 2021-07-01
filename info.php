@@ -29,9 +29,7 @@
 
     <?php
     session_start();
-    $conn=mysql_connect("localhost", "root", "P@ssw0rd");
-    mysql_set_charset("utf8",$conn);
-    $connDB=mysql_select_db("WebTest", $conn);
+    require("dbconn.php");
 
     $strSQL="select * from member where u_id='$_SESSION[user_id]'";
     $rs=mysql_query($strSQL,$conn);

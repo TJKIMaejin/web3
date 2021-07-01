@@ -28,11 +28,11 @@
         if (eregi("|/|\(|\)|\t|\|&|union|select|from|0x", $a_num)) {
           exit("no hack !!");
         }
-        if (preg_match("/select|insert|delete|update|drop/i",$a_num)) {
+        if (preg_match("/SELECT|insert|delete|update|drop/i",$a_num)) {
           // code...
           exit("no hack !!");
         }
-        if (preg_match("/union|from|limit|information_schema/i",$a_num)) {
+        if (preg_match("/union|from|limit|information_schema|NULL/i",$a_num)) {
           // code...
           exit("no hack !!");
         }  // 문자열 필터링 함수 특정 문자열 검색 함수 사용하여 치환
@@ -54,6 +54,12 @@
         $b_fname=$rs_arr["filename"];
         $b_fsize=$rs_arr["filesize"];
         $b_date=$rs_arr["writeDate"];
+
+        if ($a_num != $b_num) {
+          // code...
+          exit("hack hack");
+        }
+
          ?>
       <table width="600" border="1" cellpadding="2" class="grayColor">
          <tr>

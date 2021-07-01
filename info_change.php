@@ -18,9 +18,7 @@ if (!$nick) {
   // code...
   $nick=$_SESSION[nickname];
   }
-  $conn=mysql_connect("localhost", "root", "P@ssw0rd");
-  mysql_set_charset("utf8",$conn);
-  $connDB=mysql_select_db("WebTest", $conn);
+  require("dbconn.php");
 
 
   $strSQL="update member set nickname='$nick', u_pass='$pw1'";
