@@ -40,6 +40,14 @@ $f_error=$_FILES["att_file"]["error"];
 if ($f_error == 0) {
   // code...
   $f_name=$_FILES["att_file"]["name"];
+  if (eregi(".html|.htm|.php|.php3|.htaccess",$f_name)) {
+    // code...
+    echo "<script>
+      alert('해당 파일은 업로드 불가 합니다');
+      history.back();
+    </script>";
+    exit();
+  }
   $f_size=$_FILES["att_file"]["size"];
   $f_tmp=$_FILES["att_file"]["tmp_name"];
 
