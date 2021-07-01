@@ -1,5 +1,7 @@
 <?php
 $file_name=$_GET["filename"];
+#$file_name=str_replace("../"," ",$file_name);
+$file_name=str_replace("/"," ",$file_name);
 $file_path="./upload/".$file_name;
 $file_size= filesize($file_path);
 
